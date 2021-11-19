@@ -1,71 +1,86 @@
 package no.hvl.dat100.jplab11.oppgave1;
 
 import no.hvl.dat100.jplab11.common.TODO;
+// import no.hvl.dat100.tests.TInnlegg;
 
 public abstract class Innlegg {
 	
-	// TODO - deklarering av objektvariable
+	// TODO - deklarering av objektvariable. objektvariable id (heltall), 
+	// bruker (tekststreng), dato (tekststreng), og antall likes (heltall). 
+	private int id;
+	private int likes;
+	private String bruker, dato;
+	// private String dato;
+	// Innlegg = new Innlegg();
 	
 	public Innlegg() {
 		
 	}
 	
 	public Innlegg(int id, String bruker, String dato) {
-
-		// TODO 
-		throw new UnsupportedOperationException(TODO.constructor("Innlegg"));
+		this.bruker = bruker;
+		this.id = id;
+		this.dato = dato;
+		this.likes = 0;
 	}
 
 	public Innlegg(int id, String bruker, String dato, int likes) {
-
-		// TODO - START
-		
-		throw new UnsupportedOperationException(TODO.constructor("Innlegg"));
+		this.bruker = bruker;
+		this.id = id;
+		this.dato = dato;
+		this.likes = likes;
 	}
 	
 	public String getBruker() {
-		
-		throw new UnsupportedOperationException(TODO.method());
-
+		return bruker;
 	}
 
 	public void setBruker(String bruker) {
-		throw new UnsupportedOperationException(TODO.method());
+		this.bruker = bruker;
 	}
 
 	public String getDato() {
-		throw new UnsupportedOperationException(TODO.method());
+		return dato;
 		
 	}
 
 	public void setDato(String dato) {
-		throw new UnsupportedOperationException(TODO.method());
+		this.dato = dato;
 	}
 
 	public int getId() {
-		throw new UnsupportedOperationException(TODO.method());
+		return id;
 
 	}
 
 	public int getLikes() {
-		throw new UnsupportedOperationException(TODO.method());
+		return likes;
 
 	}
 	
 	public void doLike () {
-		throw new UnsupportedOperationException(TODO.method());
+		likes++;
 	}
 	
 	public boolean erLik(Innlegg innlegg) {
-		throw new UnsupportedOperationException(TODO.method());
+		// Implementer metoden public boolean erLik(Innlegg innlegg) som returnerer true 
+		// hvis og kun hvis innlegget har samme id som innlegget innlegg git med som parameter.
+		boolean lik = false;
+		
+		if (this == innlegg) {
+			lik = true;
+		}
+		
+		return lik;
 
 	}
 	
 	@Override
 	public String toString() {
-		
-		throw new UnsupportedOperationException(TODO.method());
-				
+		// System.out.println(id + "\n" + bruker + "\n" + dato + "\n" + likes + "\n");
+		String info = id + "\n" + bruker + "\n" + dato + "\n" + likes + "\n";
+		// "1\nOle Olsen\n23-10\n7\n"
+		return info;		
 	}
 	
 	// Metoden nedenfor er kun for valgfri oppgave 6
